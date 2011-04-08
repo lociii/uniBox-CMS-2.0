@@ -1,0 +1,77 @@
+#page_dialog .dialog_bar
+{
+	min-height: 2em;
+}
+
+.dialog_handler .dialog_error
+{
+	font-weight: bold;
+	color: #FF0000;
+	margin: 0.5em 0em;
+}
+
+.dialog_handler .dialog_clear
+{
+	clear: both;
+}
+
+#page_dialog table.dialog_bar
+{
+	width: 100%;
+	border: 1px solid #919B9C;
+	margin-bottom: 5px;
+}
+
+#page_dialog table.dialog_bar tr td
+{
+	height: 2em;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-weight: bold;
+	color: #828282;
+	text-align: center;
+	border-right: 1px solid #919B9C;
+}
+
+#page_dialog table.dialog_bar tr td.last
+{
+	border-right: 0px;
+}
+
+#page_dialog table.dialog_bar tr td.active
+{
+	background: #EFB000 url(../media/images/shadow_orange.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+#page_dialog table.dialog_bar tr td.todo
+{
+	background: #B4B4B4 url(../media/images/shadow_grey.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+#page_dialog table.dialog_bar tr td.current
+{
+	background: #C1C1C1 url(../media/images/shadow_grey.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+#page_dialog table.dialog_bar tr td.finished
+{
+	background: #719400 url(../media/images/shadow_green.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+#page_dialog table.dialog_bar tr td a
+{
+	color: #FFFFFF;
+}
+
+#page_dialog table.dialog_bar tr td a:hover, #page_dialog .dialog_bar tr td a:focus
+{
+	text-decoration: underline;
+}

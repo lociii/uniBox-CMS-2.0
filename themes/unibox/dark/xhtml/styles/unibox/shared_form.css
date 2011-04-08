@@ -1,0 +1,242 @@
+/*
+#################################################################################################
+###
+### uniBox 2.0 (winterspring)
+### (c) Media Soma GbR
+###
+#################################################################################################
+*/
+
+/* ---------------------------------------------------------------- */
+/* form containers
+/* ---------------------------------------------------------------- */
+
+.form_container
+{
+	clear: left;
+	padding: 0.3em 0em;
+}
+
+.form_label
+{
+	width: 20em;
+	float: left;
+	padding-top: 0.15em;
+}
+
+.form_error
+{
+	color: #FFC0FF;
+	font-weight: bold;
+}
+
+.form_input
+{
+	float: left;
+}
+
+.form_container_radio
+{
+	float: left;
+	padding-right: 0.5em;
+}
+
+.form_container_checkbox
+{
+	float: left;
+	padding-right: 0.5em;
+}
+
+.form_container_buttons
+{
+	padding-top: 0.3em;
+	padding-bottom: 1em;
+}
+
+.buttons_indent_fieldset
+{
+	padding-left: 20.9em;
+}
+
+* html .buttons_indent_fieldset
+{
+	padding-left: 21em;
+}
+
+.buttons_indent_no_fieldset
+{
+	padding-left: 19.9em;
+}
+
+* html .buttons_indent_no_fieldset
+{
+	padding-left: 20em;
+}
+
+.buttons_no_indent
+{
+	padding-left: 0em;
+}
+
+/* ---------------------------------------------------------------- */
+/* input types */
+/* ---------------------------------------------------------------- */
+
+.form_fieldset
+{
+	margin: 0.3em;
+	padding: 0.6em;
+	border: 1px solid #FAE2A0;
+}
+
+.form_fieldset legend
+{
+	font-weight: bold;
+	color: #FAE2A0;
+}
+
+.form_input_text, .form_input_password, .form_input_file, .form_input_textarea
+{
+	border: 1px inset #FAE2A0;
+	background-color: #303030;
+	color: #FAE2A0;
+	padding: 1px 2px;
+}
+
+textarea.editor
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	background-color: #303030;
+	color: #FAE2A0;
+}
+
+.form_input_checkbox
+{
+	border: 0px;
+	background-color: #303030;
+	color: #FAE2A0;
+}
+
+* html .form_input_checkbox
+{
+	margin-left: -4px;
+}
+
+.form_input_checkbox_multi
+{
+	vertical-align: middle;
+	margin: 2px 0px;
+	margin-right: 5px;
+	background-color: #303030;
+	color: #FAE2A0;
+}
+
+* html .form_input_checkbox_multi
+{
+	margin: -2px 0px;
+}
+
+.form_input_radio
+{
+	vertical-align: middle;
+	margin: 2px 0px;
+	background-color: #303030;
+	color: #FAE2A0;
+}
+
+* html .form_input_radio
+{
+	margin: -2px 0px;
+}
+
+.form_input_select
+{
+	border: 1px inset #4E5B6A;
+	color: #FAE2A0;
+	padding: 1px;
+	background-color: #303030;
+}
+
+.form_input_select option
+{
+	padding-right: 2em;
+	padding-left: 0.5em;
+}
+
+.form_input_select optgroup option
+{
+	padding-left: 2em;
+}
+
+.form_input_submit, .form_input_cancel
+{
+	margin-right: 1em;
+	background-color: #303030;
+	border: 1px outset #FAE2A0;
+	color: #FAE2A0;
+	padding: 0em 0.5em;
+}
+
+div.form_comment
+{
+	float: left;
+}
+
+span.form_comment
+{
+	padding-left: 1em;
+	line-height: 1.5em;
+}
+
+div.form_comment_clear
+{
+	height: 1em;
+}
+
+* html div.form_comment_clear
+{
+	height: 1.5em;
+}
+
+div.form_color_picker
+{
+	padding-top: 0.3em;
+	margin-left: 20em;
+	margin-bottom: 0.3em;
+}
+
+div.form_color_picker_row
+{
+	clear: left;
+}
+
+div.form_color_picker_column
+{
+	float: left;
+	width: 8px;
+	height: 8px;
+	cursor: pointer;
+	border-top: 1px solid #FAE2A0;
+	border-left: 1px solid #FAE2A0;
+}
+
+div.form_color_picker_row_last div.form_color_picker_column
+{
+	border-bottom: 1px solid #FAE2A0;
+}
+
+div.color_preview
+{
+	color: #FAE2A0;
+	padding: 1px 2px;
+	height: 1.2em;
+
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 20px;
+	text-align: center;
+	float: left;
+	border: 1px inset #FAE2A0;
+	background-color: #303030;
+}

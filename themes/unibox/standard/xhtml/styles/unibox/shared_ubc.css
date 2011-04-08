@@ -1,0 +1,86 @@
+acronym
+{
+	cursor: help;
+	border-bottom: 1px dotted #000000;
+}
+
+sup
+{
+}
+
+sub
+{
+}
+
+.ubc_code_header
+{
+}
+
+.ubc_code
+{
+}
+
+.ubc_quote_header
+{
+}
+
+.ubc_quote
+{
+}
+
+.ubc_ol
+{
+	padding-left: 1.5em;
+}
+
+.ubc_ol li
+{
+}
+
+.ubc_ul
+{
+	padding-left: 1.5em;
+}
+
+.ubc_ul li
+{
+}
+
+.ubc_fixed_header
+{
+}
+
+.ubc_fixed
+{
+}
+
+.ubc_image
+{
+}
+
+.ubc_table_5x_padding
+{
+}
+
+.ubc_table_5x_padding td, .ubc_table_5x_padding th
+{
+	padding: 5px;
+}
+
+table.summary
+{
+	width: 50%;
+}
+
+table.summary thead tr th
+{
+	text-align: left;
+}
+
+hr.ubc_separator
+{
+	background-color: #000000;
+	color: #000000;
+	border: #000000;
+	height: 1px;
+}

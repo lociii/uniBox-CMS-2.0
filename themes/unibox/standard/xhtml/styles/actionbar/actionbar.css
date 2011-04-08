@@ -1,0 +1,62 @@
+/*
+#################################################################################################
+###
+### uniBox 2.0 (winterspring)
+### (c) Media Soma GbR
+###
+#################################################################################################
+*/
+
+ul.actionbar_modules
+{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+ul.actionbar_modules li
+{
+	list-style-type: none;
+	padding: 5px 14px;
+}
+
+ul.actionbar_modules a, ul.actionbar_modules a:active, ul.actionbar_modules a:visited
+{
+	color: #455E85;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+ul.actionbar_modules a:hover, ul.actionbar_modules a:focus
+{
+	text-decoration: underline;
+}
+
+ul.actionbar_items
+{
+	list-style-type: circle;
+	padding-left: 1em;
+}
+
+ul.actionbar_items div
+{
+	margin-top: 4px;
+}
+
+ul.actionbar_items li
+{
+	padding: 0px;
+	padding-top: 2px;
+}
+
+ul.actionbar_items a, ul.actionbar_items a:active, ul.actionbar_items a:visited
+{
+	color: #455E85;
+	text-decoration: none;
+	font-weight: normal;
+}
+
+ul.actionbar_items a:hover, ul.actionbar_items a:focus
+{
+	text-decoration: underline;
+}

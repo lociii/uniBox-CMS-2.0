@@ -1,0 +1,27 @@
+body
+{
+	background-color: #F0F0EE;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+* html body
+{
+	padding-right: 17px;
+}
+
+fieldset
+{
+	background-color: #FFFFFF;
+}
+
+* html fieldset
+{
+	margin-top: -5px;
+	background-color: transparent;
+}
+
+* html .input_noborder
+{
+	background-color: transparent;
+}

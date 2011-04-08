@@ -1,0 +1,96 @@
+/*
+#################################################################################################
+###
+### uniBox 2.0 (winterspring)
+### (c) Media Soma GbR
+###
+#################################################################################################
+*/
+
+#page_dialog .dialog_bar
+{
+	min-height: 2em;
+}
+
+.dialog_handler .dialog_error
+{
+	font-weight: bold;
+	color: #FF0000;
+	margin: 0.5em 0em;
+}
+
+.dialog_handler .dialog_clear
+{
+	clear: both;
+}
+
+#page_dialog .dialog_bar ul li
+{
+	list-style-type: none;
+	height: 2em;
+	line-height: 2em;
+	padding-left: 1em;
+	padding-right: 1em;
+	border-bottom: 1px solid #FFFFFF;
+	font-weight: bold;
+	color: #828282;
+}
+
+#page_dialog .dialog_bar ul li.last
+{
+	float: none;
+	border-bottom: 0px;
+}
+
+#page_dialog .dialog_bar ul li.active
+{
+	background: #EFB000 url(../../media/images/shadow_orange.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+#page_dialog .dialog_bar ul li.todo
+{
+	background: #B4B4B4 url(../../media/images/shadow_grey.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+#page_dialog .dialog_bar ul li.current
+{
+	background: #C1C1C1 url(../../media/images/shadow_grey.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+#page_dialog .dialog_bar ul li.incorrect
+{
+	background: #BA0000 url(../../media/images/shadow_red.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+#page_dialog .dialog_bar ul li.finished
+{
+	background: #719400 url(../../media/images/shadow_green.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+#page_dialog .dialog_bar ul li.disabled
+{
+	background: #719400 url(../../media/images/shadow_green.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+	color: #C8DB8A;
+}
+
+#page_dialog .dialog_bar ul li a
+{
+	color: #FFFFFF;
+}
+
+#page_dialog .dialog_bar ul li a:hover, #page_dialog .dialog_bar ul li a:focus
+{
+	text-decoration: underline;
+}

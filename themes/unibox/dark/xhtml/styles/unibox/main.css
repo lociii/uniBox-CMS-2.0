@@ -1,0 +1,352 @@
+/*
+#################################################################################################
+###
+### uniBox 2.0 (winterspring)
+### (c) Media Soma GbR
+###
+#################################################################################################
+*/
+
+/*
+----------------------------------------------------------------
+	box layout
+----------------------------------------------------------------
+*/
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 1em;
+}
+
+body
+{
+	background-color: #959595;
+	color: #FAE2A0;
+	padding: 8px;
+	font-size: 70.01%;
+}
+
+a, a:active, a:visited
+{
+	color: #FAE2A0;
+	text-decoration: none;
+}
+
+a:hover, a:focus
+{
+	text-decoration: underline;
+}
+
+img
+{
+	border: 0px;
+}
+
+h1, h2, h3
+{
+	font-size: 1em;
+	display: inline;
+}
+
+label
+{
+	cursor: pointer;
+}
+
+/* boxes */
+div.box_gradient
+{
+	position: relative;
+	background-color: #1C1C1C;
+	padding: 5px 14px;
+}
+
+div.box_gradient_header
+{
+	height: 1%;
+	color: #FAE2A0;
+	border-bottom: 1px solid #FAE2A0;
+}
+
+div.box_gradient_header_image
+{
+	padding: 0px 14px;
+}
+
+div.box_gradient_header_image div.header
+{
+	padding: 5px 0px;
+}
+
+div.box_gradient_header_image img.header, img#image_toggle_instanthelp
+{
+	margin-top: 4px;
+}
+
+div.box_gradient_header_image img.message
+{
+	margin-right: 5px;
+}
+
+div.box_gradient_footer
+{
+	padding: 0px;
+	height: 10px;
+	border-top: 1px solid #FAE2A0;
+	margin-bottom: 8px;
+}
+
+div.box_gradient_separator
+{
+	border-top: 1px solid #FAE2A0;
+	border-bottom: 1px solid #FAE2A0;
+	margin: 0px;
+	padding: 0px;
+	height: 10px;
+	margin-left: -14px;
+	margin-right: -14px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+div.box_gradient_separator_dialog
+{
+	border-top: 1px solid #959595;
+	border-bottom: 1px solid #959595;
+	margin: 0px;
+	padding: 0px;
+	height: 10px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+div.box_gradient_header a, div.box_gradient_header a:visited
+{
+	color: #FAE2A0;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.box_gradient_header a:hover, div.box_gradient_header a:focus
+{
+	text-decoration: underline;
+}
+
+img.corner_tl
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+img.corner_tr
+{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+img.corner_bl
+{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+img.corner_br
+{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+div.box_blue
+{
+	background-color: #303030;
+	padding: 6px 14px 4px;
+}
+
+div.box_actionbar
+{
+	padding: 0px;
+	padding-top: 6px;
+}
+
+div.box_content
+{
+	padding: 14px;
+	padding-bottom: 0px;
+}
+
+div#page_header
+{
+	height: 3em;
+	padding: 0px;
+}
+
+div#page_header div.anchors
+{
+	float: right;
+	height: 3em;
+	margin-right: 1.2em;
+	color: #FAE2A0;
+}
+
+* html div#page_header div.anchors
+{
+	margin-right: 0.6em;
+}
+
+div#page_header div.anchors div.anchors_links
+{
+	margin-top: 0.9em;
+	margin-right: 1em;
+}
+
+div#page_header div.anchors div.logout
+{
+	margin-top: 0.8em;
+}
+
+div#page_header div.anchors div.logout span
+{
+	margin-left: 1em;
+}
+
+* html div#page_header div.anchors div.logout span
+{
+	margin-left: 0.9em;
+}
+
+div#page_header div.anchors img
+{
+	margin-top: 0px;
+}
+
+div#page_header div.anchors a, div#page_header div.anchors a:visited, div#page_header div.anchors a:active
+{
+	color: #FAE2A0;
+	text-decoration: none;
+}
+
+div#page_header div.anchors a:hover, div#page_header div.anchors a:focus
+{
+	text-decoration: underline;
+}
+
+div#page_infobar
+{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+div#page_infobar div.stylemenu a:hover
+{
+	text-decoration: none;
+}
+
+div#page_navigation
+{
+	float: left;
+	width: 17em;
+}
+
+div#page_help
+{
+	float: right;
+	width: 17em;
+}
+
+div#page_main
+{
+	margin-left: 17em;
+	margin-right: 17em;
+}
+
+div#page_main_inner
+{
+	margin-left: 8px;
+	margin-right: 8px;
+}
+
+* html div#page_main_inner
+{
+	height: 1%;
+}
+
+div#page_dialog
+{
+	min-height: 2em;
+}
+
+img#logo_unibox
+{
+	position: absolute;
+	top: 0px;
+	left: 14px;
+}
+
+/* general classes */
+
+.invisible
+{
+	position: absolute;
+	left: -2323px;
+	width: 666px;
+	overflow: hidden;
+}
+
+.float_clear
+{
+	clear: both;
+	line-height: 0px;
+	height: 0px;
+}
+
+.highlight_dark
+{
+	background-color: #1C1C1C;
+}
+
+.highlight_light
+{
+	background-color: #303030;
+}
+
+.highlight_error
+{
+	color: #FFC0FF;
+}
+
+h2.message_header
+{
+	margin-left: 2em;
+}
+
+.left_float
+{
+	float: left;
+}
+
+.left_align
+{
+	text-align: left;
+}
+
+.right_float
+{
+	float: right;
+}
+
+.right_align
+{
+	text-align: right;
+}
+
+* html .visualIEFloatFix
+{
+	height: 0.01%;
+}

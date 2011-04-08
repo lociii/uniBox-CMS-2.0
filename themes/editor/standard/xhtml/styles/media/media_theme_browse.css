@@ -1,0 +1,81 @@
+/* This file contains the CSS data for all popups in TinyMCE */
+
+td
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+input
+{
+	background: #FFFFFF;
+	border: 1px solid #cccccc;
+}
+
+td, input, select, textarea
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+input, select, textarea
+{
+	border: 1px solid #808080;
+}
+
+.input_noborder
+{
+	border: 0;
+	background-color: transparent;
+}
+
+input.radio
+{
+	border: 1px none #000000;
+	background-color: transparent;
+	vertical-align: middle;
+}
+
+input.checkbox
+{
+	border: 1px none #000000;
+	background-color: transparent;
+	vertical-align: middle;
+}
+
+fieldset
+{
+	border: 1px solid #919B9C;
+	font-family: Verdana, Arial;
+	font-size: 10px;
+	padding: 0;
+	margin: 0;
+	padding: 4px;
+	background-color: #FFFFFF;
+}
+
+* html fieldset
+{
+	background-color: transparent;
+}
+
+legend
+{
+	color: #2B6FB6;
+	font-weight: bold;
+}
+
+div.image
+{
+	margin-top: 10px;
+}
+
+.active
+{
+	color: #FF0000;
+}
+
+.input_select
+{
+	width: 200px;
+}

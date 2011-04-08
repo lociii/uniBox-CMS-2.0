@@ -1,0 +1,67 @@
+
+div.box_pagebrowser
+{
+	background-color: #FFFFFF;
+	border: 1px solid #919B9C;
+	padding: 4px 5px;
+	height: 18px;
+	line-height: 18px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+* html div.box_pagebrowser
+{
+	margin-right: -2px;
+}
+
+* html body
+{
+	padding-top: 12px;
+}
+
+div.box_pagebrowser a, div.box_pagebrowser a:visited, div.box_pagebrowser a:active
+{
+	text-decoration: none;
+}
+
+div.box_pagebrowser a:hover, div.box_pagebrowser a:focus
+{
+	text-decoration: underline;
+}
+
+div.box_pagebrowser div.pagebrowser
+{
+	float: left;
+}
+
+div.box_pagebrowser div.switch_view
+{
+	text-align: right;
+	padding: 0px;
+	margin: 0px;
+}
+
+div.box_pagebrowser div.switch_view form input
+{
+	vertical-align: middle;
+	margin: 0px 5px;
+}
+
+* html div.box_pagebrowser div.switch_view form input
+{
+	margin: 0px 2px;
+}
+
+h2.pagebrowser
+{
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+	font-size: 1em;
+}
+
+div.box_pagebrowser form
+{
+	display: inline;
+}

@@ -1,0 +1,42 @@
+*
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+body
+{
+	background-color: #E2EAF2;
+	margin: 0px;
+	padding: 0px;
+}
+
+hr
+{
+	height: 1px;
+	width: 100%;
+	color: #000000;
+}
+
+fieldset
+{
+	padding: 5px;
+	margin: 10px;
+	background-color: #DDDDDD;
+}
+
+.input_select
+{
+	width: 200px;
+}
+
+.input_checkbox
+{
+	width: 16px;
+	height: 16px;
+}
+
+div.image
+{
+	margin-top: 10px;
+}

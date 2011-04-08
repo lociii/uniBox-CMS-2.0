@@ -1,0 +1,61 @@
+*
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+body
+{
+	background-color: #E2EAF2;
+}
+
+form
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+.browser_item
+{
+	float: left;
+	margin: 10px;
+}
+
+.browser_item div.container
+{
+	width: 105px;
+	height: 80px;
+	padding: 5px;
+	text-align: left;
+	overflow: hidden;
+	background-color: #EEEEEE;
+	border: 1px solid #AAAAAA;
+}
+
+.browser_item div.container img
+{
+	cursor: pointer;
+}
+
+.browser_item div.system
+{
+	text-align: center;
+}
+
+.browser_item div.container:hover
+{
+	background-color: #EEEEFF;
+	border: 1px solid #AAAAFF;
+}
+
+.browser_item div.description
+{
+	margin-top: 5px;
+	overflow: hidden;
+	width: 110px;
+}
+
+.last
+{
+	clear: both;
+}

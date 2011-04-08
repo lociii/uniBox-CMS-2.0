@@ -1,0 +1,14 @@
+/* CSS file for newsletter plugin popup */
+
+.panel_wrapper div.current {
+	height: 277px;
+}
+
+* html .panel_wrapper div.current {
+	height: 270px;
+}
+
+* html input {
+	border: 0px;
+	height: 15px;
+}

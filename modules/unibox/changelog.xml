@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root><changelog version="0.1.1"><entry>moved get_inheriting_groups() from usermanager_pro to session</entry></changelog></root>

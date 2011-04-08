@@ -1,0 +1,50 @@
+.browser
+{
+	float: left;
+	text-align: center;
+	padding: 0px;
+	margin: 5px 20px 5px 0px;
+}
+
+.browser div.container_outer
+{
+	padding: 0px;
+	margin: 0px;
+	width: 110px;
+	height: 110px;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+}
+
+.browser div.container_outer img
+{
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.browser div.container_outer
+{
+	background-color: #FFFFFF;
+}
+
+.browser div.container_outer div.container_middle
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.browser div.container_outer div.container_middle div.container_inner
+{
+	position: absolute;
+}
+
+.browser div.description
+{
+	width: 110px;
+	height: 30px;
+	margin-top: 5px;
+	overflow: hidden;
+	text-align: center;
+}

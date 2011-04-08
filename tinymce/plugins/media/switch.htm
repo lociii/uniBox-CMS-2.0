@@ -1,0 +1,96 @@
+<html>
+    <head>
+		<script language="javascript" type="text/javascript" src="../../tiny_mce_popup.js"></script>
+        <link href="css/switch.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body onload="top.uniBoxMedia.check_themes();">
+        <form name="options">
+        	<fieldset>
+	        	<legend>{$lang_media_insert_type}</legend>
+	        	<table border="0" cellpadding="0" cellspacing="2">
+					<tr>
+						<td>        				
+							<input type="radio" class="input_noborder" name="type" id="type_one_for_all" value="one_for_all" onclick="top.uniBoxMedia.switch_type()" checked="checked" />
+						</td>
+						<td>
+							<label for="type_one_for_all">{$lang_media_one_for_all}</label>
+						</td>
+					</tr>
+					<tr>
+						<td>        				
+							<input type="radio" class="input_noborder" name="type" id="type_one_for_each" value="one_for_each" onclick="top.uniBoxMedia.switch_type()" />
+						</td>
+						<td>
+							<label for="type_one_for_each">{$lang_media_one_for_each}</label>
+						</td>
+					</tr>
+	            </table>
+            </fieldset>
+            <br/>
+            <fieldset>
+	            <legend>{$lang_media_options}</legend>
+	        	<table border="0" cellpadding="0" cellspacing="4">
+	                <tr>
+	                    <td>
+	                    	<label for="align"><strong>{$lang_media_floating}:</strong></label>
+	                    </td>
+	                    <td style="padding-left: 7px;">
+	                        <select id="align" name="align">
+	                            <option value="none">{$lang_media_none_ucase}</option>
+	                            <option value="left">{$lang_media_left_ucase}</option>
+	                            <option value="right">{$lang_media_right_ucase}</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                    	<strong>{$lang_media_margin}:</strong>
+	                    </td>
+	                    <td style="padding-left: 5px;">
+	                    	<table border="0" cellpadding="0" cellspacing="2">
+	                    		<tr>
+	                    			<td>
+				                        <label for="margin_left">{$lang_media_left}:</label>
+	            					</td>
+	            					<td>
+	                        			&nbsp;<input type="text" id="margin_left" name="margin_left" size="2" value="0" />
+	                        		</td>
+	                        		<td style="width: 10px;">&nbsp;</td>
+									<td>
+	                        			<label for="margin_right">{$lang_media_right}:</label>
+	                        		</td>
+	                        		<td>
+	                        			&nbsp;<input type="text" id="margin_right" name="margin_right" size="2" value="0" />
+	                        		</td>
+	                        	</tr>
+	                        	<tr>
+	                        		<td>
+	                        			<label for="margin_top">{$lang_media_top}:</label>
+	                        		</td>
+	                        		<td>
+	                        			&nbsp;<input type="text" id="margin_top" name="margin_top" size="2" value="0" />
+	                        		</td>
+	                        		<td style="width: 10px;">&nbsp;</td>
+	                        		<td>
+	                        			<label for="margin_bottom">{$lang_media_bottom}:</label>
+	                        		</td>
+	                        		<td>
+	                        			&nbsp;<input type="text" id="margin_bottom" name="margin_bottom" size="2" value="0" />
+	                        		</td>
+	                        	</tr>
+	                        </table>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                    	<label for="zoom"><strong>Zoom anzeigen:</strong></label>
+	                    </td>
+	                    <td>
+	                        &nbsp;<input type="checkbox" class="input_noborder" id="zoom" name="zoom" checked="checked" />
+	                    </td>
+	                </tr>
+				</table>
+			</fieldset>
+        </form>
+    </body>
+</html>

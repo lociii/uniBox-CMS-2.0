@@ -1,0 +1,176 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+body
+{
+	background-color: #F0F0EE;
+	color: #4E5B6A;
+	padding: 8px;
+}
+
+a, a:active, a:visited
+{
+	color: #455E85;
+	text-decoration: none;
+}
+
+a:hover, a:focus
+{
+	text-decoration: underline;
+}
+
+img
+{
+	border: 0px;
+}
+
+div.box_white
+{
+	background-color: #FFFFFF;
+	border: 1px solid #919B9C;
+	padding: 10px;
+}
+
+/* boxes */
+div.box_gradient
+{
+	position: relative;
+	background-repeat: repeat-y;
+	background-color: #4576AB;
+	padding: 5px 14px;
+}
+
+div.box_gradient_large
+{
+	background-image: url(../media/images/back_1.gif);
+}
+
+div.box_gradient_small
+{
+	background-image: url(../media/images/back_2.gif);
+}
+
+div.box_gradient_header
+{
+	height: 1%;
+	color: #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+div.box_gradient_header_image
+{
+	padding: 0px 14px;
+}
+
+div.box_gradient_header_image div.header
+{
+	padding: 5px 0px;
+}
+
+div.box_gradient_header_image img.header, #image_toggle_instanthelp
+{
+	margin-top: 4px;
+}
+
+div.box_gradient_header_image img.message
+{
+	margin-right: 5px;
+}
+
+div.box_gradient_footer
+{
+	padding: 0px;
+	height: 10px;
+	border-top: 1px solid #FFFFFF;
+	margin-bottom: 8px;
+}
+
+div.box_gradient_separator
+{
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	height: 10px;
+}
+
+div.box_gradient_separator_dialog
+{
+	border-top: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+	height: 10px;
+}
+
+div.box_gradient_header a, div.box_gradient_header a:visited
+{
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.box_gradient_header a:hover, div.box_gradient_header a:focus
+{
+	text-decoration: underline;
+}
+
+/* general classes */
+
+.invisible
+{
+	position: absolute;
+	left: -2323px;
+	width: 666px;
+	overflow: hidden;
+}
+
+.highlight_dark
+{
+	background-color: #BCCADB;
+}
+
+.highlight_light
+{
+	background-color: #DAE3EC;
+}
+
+.highlight_error
+{
+	color: #BE0000;
+}
+
+h2.message_header
+{
+	margin-left: 2em;
+}
+
+.left_float
+{
+	float: left;
+}
+
+.left_align
+{
+	text-align: left;
+}
+
+.right_float
+{
+	float: right;
+}
+
+.right_align
+{
+	text-align: right;
+}
+
+* html .visualIEFloatFix
+{
+	height: 0.01%;
+}

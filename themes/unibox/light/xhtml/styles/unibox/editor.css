@@ -1,0 +1,37 @@
+/*
+#################################################################################################
+###
+### uniBox 2.0 (winterspring)
+### (c) Media Soma GbR
+###
+#################################################################################################
+*/
+
+*
+{
+	margin: 0px;
+	padding: 0px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+body
+{
+	font-size: 9pt;
+	margin: 0px;
+	padding: 0px;
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+/* ie fix */
+* html td, * html th
+{
+	font-size: 9pt;
+	margin: 0px;
+	padding: 0px;
+}
+
+img
+{
+	border: 0px;
+}

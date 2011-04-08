@@ -1,0 +1,89 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>{$lang_newsletter_insert_replacement_title}</title>
+	<script language="javascript" type="text/javascript" src="../../tiny_mce_popup.js"></script>
+	<script language="javascript" type="text/javascript" src="../../utils/mctabs.js"></script>
+	<script language="javascript" type="text/javascript" src="../../utils/form_utils.js"></script>
+	<script language="javascript" type="text/javascript" src="jscripts/functions.js"></script>
+	<link href="css/newsletter.css" rel="stylesheet" type="text/css" />
+	<base target="_self" />
+</head>
+<body id="newsletter" onload="uniBoxNewsletter.move(); uniBoxNewsletter.checkForSelection();" style="display: none">
+    <form onsubmit="uniBoxNewsletter.insert(); return false;" action="#">
+		<div class="tabs">
+			<ul>
+				<li id="general_tab" class="current"><span><a href="javascript:mcTabs.displayTab('general_tab','general_panel');" onmousedown="return false;">{$lang_newsletter_general_tab}</a></span></li>
+			</ul>
+		</div>
+
+		<div class="panel_wrapper">
+			<div id="general_panel" class="panel current">
+                <fieldset>
+                    <legend>{$lang_newsletter_replacements_recipient}</legend>
+                    <table border="0" cellpadding="4" cellspacing="0">
+                        <tr>
+                            <td><input id="replacement_title" name="replacement" type="radio" value="title" /></td>
+                            <td><label for="replacement_title">{$lang_newsletter_replacement_title}</label></td>
+                        </tr>
+                        <tr>
+                            <td><input id="replacement_firstname" name="replacement" type="radio" value="firstname" /></td>
+                            <td><label for="replacement_firstname">{$lang_newsletter_replacement_firstname}</label></td>
+                        </tr>
+                        <tr>
+                            <td><input id="replacement_lastname" name="replacement" type="radio" value="lastname" /></td>
+                            <td><label for="replacement_lastname">{$lang_newsletter_replacement_lastname}</label></td>
+                        </tr>
+                        <tr>
+                            <td><input id="replacement_email" name="replacement" type="radio" value="email" /></td>
+                            <td><label for="replacement_email">{$lang_newsletter_replacement_email}</label></td>
+                        </tr>
+					</table>
+				</fieldset>
+				<br />
+                <fieldset>
+                    <legend>{$lang_newsletter_replacements_unsubscribe_link}</legend>
+                    <table border="0" cellpadding="4" cellspacing="0">
+                        <tr>
+                            <td style="vertical-align: top;"><input id="replacement_unsubscribe_link" name="replacement" type="radio" value="unsubscribe_link" /></td>
+                            <td>
+                            	<label for="replacement_unsubscribe_link">{$lang_newsletter_replacement_unsubscribe_link}</label>
+                            	<br/>
+                            	<table border="0" cellpadding="4" cellspacing="0">
+                            		<tr>
+                            			<td><input id="unsubscribe_link_type_link" name="unsubscribe_link_type" type="radio" value="link" disabled="disabled" /></td>
+                            			<td><label for="unsubscribe_link_type_link">{$lang_newsletter_unsubscribe_link_type_link}</label></td>
+                            		</tr>
+                            		<tr>
+                            			<td><input id="unsubscribe_link_type_url" name="unsubscribe_link_type" type="radio" value="url" /></td>
+                            			<td><label for="unsubscribe_link_type_url">{$lang_newsletter_unsubscribe_link_type_url}</label></td>
+                            		</tr>
+                            	</table>
+                            </td>
+                        </tr>
+					</table>
+				</fieldset>
+				<br />
+                <fieldset>
+                    <legend>{$lang_newsletter_replacements_content}</legend>
+                    <table border="0" cellpadding="4" cellspacing="0">
+                        <tr>
+                            <td><input id="replacement_content" name="replacement" type="radio" value="content"></td>
+                            <td><label for="replacement_content">{$lang_newsletter_replacement_content}</label></td>
+                        </tr>
+                    </table>
+                </fieldset>
+			</div>
+		</div>
+
+		<div class="mceActionPanel">
+			<div style="float: left">
+				<input type="button" id="insert" name="insert" value="{$lang_insert}" onclick="uniBoxNewsletter.insert();" />
+			</div>
+
+			<div style="float: right">
+				<input type="button" id="cancel" name="cancel" value="{$lang_cancel}" onclick="tinyMCEPopup.close();" />
+			</div>
+		</div>
+    </form>
+</body>
+</html>

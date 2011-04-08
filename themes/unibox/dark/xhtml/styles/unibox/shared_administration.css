@@ -1,0 +1,165 @@
+/*
+#################################################################################################
+###
+### uniBox 2.0 (winterspring)
+### (c) Media Soma GbR
+###
+#################################################################################################
+*/
+
+#administrate_links
+{
+	height: 1%;
+}
+
+div.table_administrate
+{
+	margin: 0px;
+	padding: 0px;
+	margin-left: -14px;
+	margin-right: -14px;
+}
+
+div.table_administrate div.label
+{
+	padding: 5px;
+}
+
+div.table_administrate h3
+{
+	font-size: 1.2em;
+}
+
+table.administrate
+{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+table.administrate thead tr
+{
+	height: 25px;
+}
+
+table.administrate thead tr th
+{
+	padding-left: 5px;
+	background: #333333;
+	background-repeat: repeat-x;
+	background-position: top left;
+	border-bottom: 1px solid #FAE2A0;
+}
+
+table.administrate thead tr th.nesting
+{
+	width: 15px;
+	font-size: 0px;
+	line-height: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.administrate thead tr th.checkbox
+{
+	width: 20px;
+	font-size: 0px;
+	line-height: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.administrate thead tr th.address
+{
+	width: 0px;
+	font-size: 0px;
+	line-height: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.administrate thead tr th.blind
+{
+	font-size: 0px;
+	line-height: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+table.administrate thead tr a
+{
+	color: #FAE2A0;
+	text-decoration: none;
+}
+
+table.administrate thead tr a:hover, table.administrate thead tr a:focus
+{
+	text-decoration: underline;
+}
+
+table.administrate tbody tr
+{
+	height: 25px;
+	vertical-align: middle;
+}
+
+table.administrate tbody tr td
+{
+	padding-left: 5px;
+	font-weight: bold;
+}
+
+table.administrate tbody tr td.nesting
+{
+	width: 15px;
+	text-align: center;
+}
+
+table.administrate tbody tr td.checkbox
+{
+	width: 20px;
+	text-align: center;
+}
+
+table.administrate tbody tr td.address
+{
+	width: 0px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+table.administrate tbody tr td.symbol
+{
+	padding: 0px;
+	text-align: center;
+	width: 40px;
+	border-left: 1px solid #FAE2A0;
+}
+
+table.administrate tbody tr td img.nesting
+{
+	vertical-align: middle;
+	margin-right: 4px;
+}
+
+div.multi_options
+{
+	height: 1%;
+	margin-left: -14px;
+	margin-right: -14px;
+	padding: 5px;
+	padding-top: 6px;
+	padding-bottom: 4px;
+}
+
+div.multi_options input
+{
+	border: 0px;
+	color: #FAE2A0;
+	vertical-align: middle;
+	margin: 0px;
+	margin-left: 12px;
+	cursor: pointer;
+}

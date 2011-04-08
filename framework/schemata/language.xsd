@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+#################################################################################################
+###
+### uniBox 2.0 (winterspring)
+### (c) Media Soma GbR
+###
+### 0.1     11.07.2006  jn		language pack validation scheme
+###
+#################################################################################################
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="root">
+       <xs:complexType>
+			<xs:sequence>
+				<xs:element name="module_ident" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="lang_ident" type="xs:string" minOccurs="1" maxOccurs="1" />
+				<xs:element name="lang_version" type="xs:float" minOccurs="1" maxOccurs="1" />
+				<xs:element name="translations" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="translation" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ident" type="xs:string" minOccurs="1" maxOccurs="1" />
+										<xs:element name="value" type="xs:string" minOccurs="1" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="email_containers" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="email_container" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ident" type="xs:string" minOccurs="1" maxOccurs="1" />
+										<xs:element name="si_descr" type="xs:string" minOccurs="1" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="emails" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="email" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ident" type="xs:string" minOccurs="1" maxOccurs="1" />
+										<xs:element name="subject" type="xs:string" minOccurs="1" maxOccurs="1" />
+										<xs:element name="body" type="xs:string" minOccurs="1" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+#################################################################################################
+###
+### uniBox 2.0 (winterspring)
+### (c) Media Soma GbR
+###
+#################################################################################################
+-->
+
+<!--
+#################################################################################################
+### DEFINE TYPES
+#################################################################################################
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:simpleType name="autoincrement">
+		<xsd:restriction base="xsd:integer" />
+	</xsd:simpleType>
+
+	<xsd:complexType name="sys_menu">
+		<xsd:sequence>
+			<xsd:element name="menu_id" type="autoincrement" />
+			<xsd:element name="si_menu_name" type="xsd:string" />
+			<xsd:element name="si_menu_descr" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_modules">
+		<xsd:sequence>
+			<xsd:element name="module_ident" type="xsd:string" />
+			<xsd:element name="extends_module_ident" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="si_module_name" type="xsd:string" />
+			<xsd:element name="module_version" type="xsd:string" />
+			<xsd:element name="module_builtin">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="module_actionbar_menu_id" type="xsd:integer" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="module_actionbar_group_ident" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="module_min_lang_pack_version" type="xsd:decimal" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_styles">
+		<xsd:sequence>
+			<xsd:element name="style_ident" type="xsd:string" />
+			<xsd:element name="module_ident" type="xsd:string" />
+			<xsd:element name="si_style_descr" type="xsd:string" />
+			<xsd:element name="style_media" type="xsd:string" />
+			<xsd:element name="style_filename" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_templates">
+		<xsd:sequence>
+			<xsd:element name="template_ident" type="xsd:string" />
+			<xsd:element name="module_ident" type="xsd:string" />
+			<xsd:element name="si_template_descr" type="xsd:string" />
+			<xsd:element name="template_filename" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_template_styles">
+		<xsd:sequence>
+			<xsd:element name="template_ident" type="xsd:string" />
+			<xsd:element name="style_ident" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_class_files">
+		<xsd:sequence>
+			<xsd:element name="class_name" type="xsd:string" />
+			<xsd:element name="class_filename" type="xsd:string" />
+			<xsd:element name="module_ident" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_state_functions">
+		<xsd:sequence>
+			<xsd:element name="state" type="xsd:string" />
+			<xsd:element name="class_name" type="xsd:string" />
+			<xsd:element name="function" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_actions">
+		<xsd:sequence>
+			<xsd:element name="action_ident" type="xsd:string" />
+			<xsd:element name="module_ident" type="xsd:string" />
+			<xsd:element name="state_init" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="si_action_descr" type="xsd:string" />
+			<xsd:element name="si_action_help" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="action_sort" type="xsd:integer" />
+			<xsd:element name="action_save">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="action_short">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="bitmask" type="xsd:integer" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_action_inheritance">
+		<xsd:sequence>
+			<xsd:element name="inherits_from_action_ident" type="xsd:string" />
+			<xsd:element name="action_ident" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_dialogs">
+		<xsd:sequence>
+			<xsd:element name="action_ident" type="xsd:string" />
+			<xsd:element name="step" type="xsd:integer" />
+			<xsd:element name="si_step_descr" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_paths">
+		<xsd:sequence>
+			<xsd:element name="state_current" type="xsd:string" />
+			<xsd:element name="state_return_value" type="xsd:integer" />
+			<xsd:element name="action_ident" type="xsd:string" />
+			<xsd:element name="state_next" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_alias">
+		<xsd:sequence>
+			<xsd:element name="alias" type="xsd:string" />
+			<xsd:element name="alias_group_ident" type="xsd:string" />
+			<xsd:element name="action_ident" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_alias_get">
+		<xsd:sequence>
+			<xsd:element name="alias" type="xsd:string" />
+			<xsd:element name="name" type="xsd:string" />
+			<xsd:element name="value" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_menu_items">
+		<xsd:sequence>
+			<xsd:element name="menu_item_id" type="autoincrement" />
+			<xsd:element name="menu_id" type="xsd:integer" />
+			<xsd:element name="menu_item_parent_id" type="xsd:integer" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="alias" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="si_menu_item_name" type="xsd:string" />
+			<xsd:element name="si_menu_item_descr" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="menu_item_sort" type="xsd:integer" />
+			<xsd:element name="menu_item_hotkey" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="menu_item_show_always">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:integer">
+						<xsd:minInclusive value="0"/>
+						<xsd:maxInclusive value="1"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_menu_items_get">
+		<xsd:sequence>
+			<xsd:element name="menu_item_id" type="xsd:integer" />
+			<xsd:element name="name" type="xsd:string" />
+			<xsd:element name="value" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_config_groups">
+		<xsd:sequence>
+			<xsd:element name="config_group_ident" type="xsd:string" />
+			<xsd:element name="module_ident" type="xsd:string" />
+			<xsd:element name="si_config_group_descr" type="xsd:string" />
+			<xsd:element name="config_group_sort" type="xsd:integer" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_config">
+		<xsd:sequence>
+			<xsd:element name="config_ident" type="xsd:string" />
+			<xsd:element name="config_value" type="xsd:string" />
+			<xsd:element name="si_config_descr" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="config_type" type="xsd:string" />
+			<xsd:element name="config_group_ident" type="xsd:string" />
+			<xsd:element name="config_field_spec" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="config_sort" type="xsd:integer" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_email_templates_container">
+		<xsd:sequence>
+			<xsd:element name="template_container_ident" type="xsd:string" />
+			<xsd:element name="module_ident" type="xsd:string" />
+			<xsd:element name="si_template_container_descr" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_sex">
+		<xsd:sequence>
+			<xsd:element name="module_ident_from" type="xsd:string" />
+			<xsd:element name="module_ident_to" type="xsd:string" />
+			<xsd:element name="entity_ident" type="xsd:string" />
+			<xsd:element name="entity_class" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="entity_type" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="entity_type_definition" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="entity_value" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="si_entity_name" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="si_entity_descr" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="entity_detail_int" type="xsd:integer" />
+			<xsd:element name="entity_detail_text" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="sys_ucm">
+		<xsd:sequence>
+			<xsd:element name="module_ident" type="xsd:string" />
+			<xsd:element name="content_type" type="xsd:string" />
+			<xsd:element name="parent_content_type" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="parent_dependency" type="xsd:string" />
+			<xsd:element name="content_table" type="xsd:string" />
+			<xsd:element name="si_content_descr" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="si_content_descr_count" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="field_map" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="table_field">
+		<xsd:sequence>
+			<xsd:element name="type-definition" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="value" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+						<xsd:element name="size" type="xsd:integer" minOccurs="0" maxOccurs="1" />
+						<xsd:element name="length" type="xsd:integer" minOccurs="0" maxOccurs="1" />
+						<xsd:element name="unsigned" type="xsd:integer" minOccurs="0" maxOccurs="1" />
+					</xsd:sequence>
+					<xsd:attribute name="type" type="xsd:string" use="required" />
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="nullable" type="xsd:integer" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="default-value" minOccurs="0" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="null" type="xsd:string" use="optional" />
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="auto-increment" type="xsd:integer" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string" use="required" />
+	</xsd:complexType>
+	<xsd:complexType name="table_key">
+		<xsd:sequence>
+			<xsd:element name="field" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string" use="optional" />
+		<xsd:attribute name="type" type="xsd:string" use="required" />
+	</xsd:complexType>
+	<xsd:complexType name="table_constraint">
+		<xsd:sequence>
+			<xsd:element name="field" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+			<xsd:element name="references" minOccurs="1" maxOccurs="1">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="field" type="xsd:string" minOccurs="1" maxOccurs="unbounded" />
+					</xsd:sequence>
+					<xsd:attribute name="table" type="xsd:string" use="required" />
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="on_delete" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="on_update" type="xsd:string" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+<!--
+#################################################################################################
+### DEFINE DOCUMENT STRUCTURE
+#################################################################################################
+-->
+
+	<xsd:element name="root">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="module_ident" type="xsd:string" minOccurs="0" maxOccurs="1" />
+				<xsd:element name="data" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="sys_menu" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_menu" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_modules" minOccurs="1" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_modules" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_styles" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_styles" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_templates" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_templates" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_template_styles" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_template_styles" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_class_files" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_class_files" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_state_functions" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_state_functions" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_actions" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_actions" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_action_inheritance" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_action_inheritance" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_dialogs" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_dialogs" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_paths" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_paths" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_alias" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_alias" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_alias_get" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_alias_get" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_menu_items" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_menu_items" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_menu_items_get" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_menu_items_get" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_config_groups" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_config_groups" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_config" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_config" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_email_templates_container" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_email_templates_container" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_sex" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_sex" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="sys_ucm" minOccurs="0" maxOccurs="1">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="node" type="sys_ucm" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="tables" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="table" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="field" type="table_field" minOccurs="1" maxOccurs="unbounded" />
+										<xsd:element name="key" type="table_key" minOccurs="0" maxOccurs="unbounded" />
+										<xsd:element name="constraint" type="table_constraint" minOccurs="0" maxOccurs="unbounded" />
+									</xsd:sequence>
+									<xsd:attribute name="name" type="xsd:string" />
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="triggers" minOccurs="0" maxOccurs="1">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="trigger" maxOccurs="unbounded" type="xsd:string" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+
+<!--
+#################################################################################################
+### DEFINE PRIMARY KEYS
+#################################################################################################
+-->
+
+		<xsd:key name="sys_modules.primary">
+			<xsd:selector xpath="data/sys_modules/node" />
+			<xsd:field xpath="module_ident" />
+		</xsd:key>
+		<xsd:key name="sys_styles.primary">
+			<xsd:selector xpath="data/sys_styles/node" />
+			<xsd:field xpath="style_ident" />
+		</xsd:key>
+		<xsd:key name="sys_templates.primary">
+			<xsd:selector xpath="data/sys_templates/node" />
+			<xsd:field xpath="template_ident" />
+		</xsd:key>
+		<xsd:key name="sys_template_styles.primary">
+			<xsd:selector xpath="data/sys_template_styles/node" />
+			<xsd:field xpath="template_ident" />
+			<xsd:field xpath="style_ident" />
+		</xsd:key>
+		<xsd:key name="sys_class_files.primary">
+			<xsd:selector xpath="data/sys_class_files/node" />
+			<xsd:field xpath="class_name" />
+		</xsd:key>
+		<xsd:key name="sys_state_functions.primary">
+			<xsd:selector xpath="data/sys_state_functions/node" />
+			<xsd:field xpath="state" />
+		</xsd:key>
+		<xsd:key name="sys_actions.primary">
+			<xsd:selector xpath="data/sys_actions/node" />
+			<xsd:field xpath="action_ident" />
+		</xsd:key>
+		<xsd:key name="sys_action_inheritance.primary">
+			<xsd:selector xpath="data/sys_action_inheritance/node" />
+			<xsd:field xpath="inherits_from_action_ident" />
+			<xsd:field xpath="action_ident" />
+		</xsd:key>
+		<xsd:key name="sys_dialogs.primary">
+			<xsd:selector xpath="data/sys_dialogs/node" />
+			<xsd:field xpath="action_ident" />
+			<xsd:field xpath="step" />
+		</xsd:key>
+		<xsd:key name="sys_paths.primary">
+			<xsd:selector xpath="data/sys_paths/node" />
+			<xsd:field xpath="state_current" />
+			<xsd:field xpath="state_return_value" />
+			<xsd:field xpath="action_ident" />
+		</xsd:key>
+		<xsd:key name="sys_menu.primary">
+			<xsd:selector xpath="data/sys_menu/node" />
+			<xsd:field xpath="menu_id" />
+		</xsd:key>
+		<xsd:key name="sys_menu_items.primary">
+			<xsd:selector xpath="data/sys_menu_items/node" />
+			<xsd:field xpath="menu_item_id" />
+		</xsd:key>
+		<xsd:key name="sys_menu_items_get.primary">
+			<xsd:selector xpath="data/sys_menu_items_get/node" />
+			<xsd:field xpath="menu_item_id" />
+			<xsd:field xpath="name" />
+		</xsd:key>
+		<xsd:key name="sys_config_group.primary">
+			<xsd:selector xpath="data/sys_config_group/node" />
+			<xsd:field xpath="config_group_ident" />
+		</xsd:key>
+		<xsd:key name="sys_config.primary">
+			<xsd:selector xpath="data/sys_config/node" />
+			<xsd:field xpath="config_ident" />
+		</xsd:key>
+		<xsd:key name="sys_email_templates_container.primary">
+			<xsd:selector xpath="data/sys_email_templates_container/node" />
+			<xsd:field xpath="template_container_ident" />
+		</xsd:key>
+		<xsd:key name="sys_sex.primary">
+			<xsd:selector xpath="data/sys_sex/node" />
+			<xsd:field xpath="module_ident_from" />
+			<xsd:field xpath="module_ident_to" />
+			<xsd:field xpath="entity_ident" />
+		</xsd:key>
+		<xsd:key name="sys_ucm.primary">
+			<xsd:selector xpath="data/sys_ucm/node" />
+			<xsd:field xpath="module_ident" />
+			<xsd:field xpath="content_type" />
+		</xsd:key>
+		<xsd:key name="sys_alias.primary">
+			<xsd:selector xpath="data/sys_alias/node" />
+			<xsd:field xpath="alias" />
+		</xsd:key>
+		<xsd:key name="sys_alias_get.primary">
+			<xsd:selector xpath="data/sys_alias_get/node" />
+			<xsd:field xpath="alias" />
+			<xsd:field xpath="name" />
+		</xsd:key>
+
+<!--
+#################################################################################################
+### DEFINE REFERENCED KEYS
+#################################################################################################
+-->
+		<xsd:unique name="sys_modules.module_ident">
+			<xsd:selector xpath="data/sys_modules/node" />
+			<xsd:field xpath="module_ident" />
+		</xsd:unique>
+		<xsd:unique name="sys_styles.style_ident">
+			<xsd:selector xpath="data/sys_styles/node" />
+			<xsd:field xpath="style_ident" />
+		</xsd:unique>
+		<xsd:unique name="sys_templates.template_ident">
+			<xsd:selector xpath="data/sys_templates/node" />
+			<xsd:field xpath="template_ident" />
+		</xsd:unique>
+		<xsd:unique name="sys_class_files.class_name">
+			<xsd:selector xpath="data/sys_class_files/node" />
+			<xsd:field xpath="class_name" />
+		</xsd:unique>
+		<xsd:unique name="sys_actions.action_ident">
+			<xsd:selector xpath="data/sys_actions/node" />
+			<xsd:field xpath="action_ident" />
+		</xsd:unique>
+		<xsd:unique name="sys_menu.menu_id">
+			<xsd:selector xpath="data/sys_menu/node" />
+			<xsd:field xpath="menu_id" />
+		</xsd:unique>
+		<xsd:unique name="sys_menu_items.menu_item_id">
+			<xsd:selector xpath="data/sys_menu_items/node" />
+			<xsd:field xpath="menu_item_id" />
+		</xsd:unique>
+		<xsd:unique name="sys_alias.alias">
+			<xsd:selector xpath="data/sys_alias/node" />
+			<xsd:field xpath="alias" />
+		</xsd:unique>
+		<xsd:unique name="sys_config_groups.config_group_ident">
+			<xsd:selector xpath="data/sys_config_groups/node" />
+			<xsd:field xpath="config_group_ident" />
+		</xsd:unique>
+
+<!--
+#################################################################################################
+### DEFINE REFERENCES
+#################################################################################################
+-->
+
+<!-- sys_modules -->
+		<xsd:keyref name="sys_modules.module_actionbar_menu_id" refer="sys_menu.menu_id">
+			<xsd:selector xpath="data/sys_modules/node" />
+			<xsd:field xpath="module_actionbar_menu_id" />
+		</xsd:keyref>
+<!-- sys_styles -->
+		<xsd:keyref name="sys_styles.module_ident" refer="sys_modules.module_ident">
+			<xsd:selector xpath="data/sys_styles/node" />
+			<xsd:field xpath="module_ident" />
+		</xsd:keyref>
+<!-- sys_templates -->
+		<xsd:keyref name="sys_templates.module_ident" refer="sys_modules.module_ident">
+			<xsd:selector xpath="data/sys_templates/node" />
+			<xsd:field xpath="module_ident" />
+		</xsd:keyref>
+<!-- sys_template_styles -->
+		<xsd:keyref name="sys_template_styles.template_ident" refer="sys_templates.template_ident">
+			<xsd:selector xpath="data/sys_template_styles/node" />
+			<xsd:field xpath="template_ident" />
+		</xsd:keyref>
+		<xsd:keyref name="sys_template_styles.style_ident" refer="sys_styles.style_ident">
+			<xsd:selector xpath="data/sys_template_styles/node" />
+			<xsd:field xpath="style_ident" />
+		</xsd:keyref>
+<!-- sys_class_files -->
+		<xsd:keyref name="sys_class_files.module_ident" refer="sys_modules.module_ident">
+			<xsd:selector xpath="data/sys_class_files/node" />
+			<xsd:field xpath="module_ident" />
+		</xsd:keyref>
+<!-- sys_actions -->
+		<xsd:keyref name="sys_actions.module_ident" refer="sys_modules.module_ident">
+			<xsd:selector xpath="data/sys_actions/node" />
+			<xsd:field xpath="module_ident" />
+		</xsd:keyref>
+<!-- sys_actions -->
+		<xsd:keyref name="sys_action_inheritance.inherits_from_action_ident" refer="sys_actions.action_ident">
+			<xsd:selector xpath="data/sys_action_inheritance/node" />
+			<xsd:field xpath="inherits_from_action_ident" />
+		</xsd:keyref>
+<!-- sys_dialogs -->
+		<xsd:keyref name="sys_dialogs.action_ident" refer="sys_actions.action_ident">
+			<xsd:selector xpath="data/sys_dialogs/node" />
+			<xsd:field xpath="action_ident" />
+		</xsd:keyref>
+<!-- sys_paths -->
+		<xsd:keyref name="sys_paths.action_ident" refer="sys_actions.action_ident">
+			<xsd:selector xpath="data/sys_paths/node" />
+			<xsd:field xpath="action_ident" />
+		</xsd:keyref>
+<!-- sys_menu_items -->
+		<xsd:keyref name="sys_menu_items.menu_id" refer="sys_menu.menu_id">
+			<xsd:selector xpath="data/sys_menu_items/node" />
+			<xsd:field xpath="menu_id" />
+		</xsd:keyref>
+		<xsd:keyref name="sys_menu_items.menu_item_parent_id" refer="sys_menu_items.menu_item_id">
+			<xsd:selector xpath="data/sys_menu_items/node" />
+			<xsd:field xpath="menu_item_parent_id" />
+		</xsd:keyref>
+<!-- sys_menu_items_get -->
+		<xsd:keyref name="sys_menu_items_get.menu_item_id" refer="sys_menu_items.menu_item_id">
+			<xsd:selector xpath="data/sys_menu_items_get/node" />
+			<xsd:field xpath="menu_item_id" />
+		</xsd:keyref>
+<!-- sys_config_groups -->
+		<xsd:keyref name="sys_config_groups.module_ident" refer="sys_modules.module_ident">
+			<xsd:selector xpath="data/sys_config_groups/node" />
+			<xsd:field xpath="module_ident" />
+		</xsd:keyref>
+<!-- sys_config -->
+		<xsd:keyref name="sys_config.config_group_ident" refer="sys_config_groups.config_group_ident">
+			<xsd:selector xpath="data/sys_config/node" />
+			<xsd:field xpath="config_group_ident" />
+		</xsd:keyref>
+<!-- sys_email_templates_container -->
+		<xsd:keyref name="sys_email_templates_container.module_ident" refer="sys_modules.module_ident">
+			<xsd:selector xpath="data/sys_email_templates_container/node" />
+			<xsd:field xpath="module_ident" />
+		</xsd:keyref>
+<!-- sys_sex -->
+		<xsd:keyref name="sys_sex.module_ident_from" refer="sys_modules.module_ident">
+			<xsd:selector xpath="data/sys_sex/node" />
+			<xsd:field xpath="module_ident_from" />
+		</xsd:keyref>
+<!-- sys_ucm -->
+		<xsd:keyref name="sys_ucm.module_ident" refer="sys_modules.module_ident">
+			<xsd:selector xpath="data/sys_ucm/node" />
+			<xsd:field xpath="module_ident" />
+		</xsd:keyref>
+<!-- sys_alias -->
+		<xsd:keyref name="sys_alias.action_ident" refer="sys_actions.action_ident">
+			<xsd:selector xpath="data/sys_alias/node" />
+			<xsd:field xpath="action_ident" />
+		</xsd:keyref>
+<!-- sys_alias_get -->
+		<xsd:keyref name="sys_alias_get.alias" refer="sys_alias.alias">
+			<xsd:selector xpath="data/sys_alias_get/node" />
+			<xsd:field xpath="alias" />
+		</xsd:keyref>
+
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,12 @@
+body
+{
+	background-color: #F0F0EE;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+#container_buttons
+{
+	margin-right: 15px;
+	float: right;
+}
